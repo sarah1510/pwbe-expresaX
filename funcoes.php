@@ -15,5 +15,5 @@ function buscarFuncionario($funcionarios, $nome){
             $funcionariosFiltro[] = $funcionario;
         }
     }
-    return $funcioanrioFiltro;
+    return $funcioanriosFiltro;
 }
