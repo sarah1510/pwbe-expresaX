@@ -26,10 +26,9 @@
             name="buscarFuncionario" 
             placeholder ="Buscar Funcionário">
         <button>Buscar</button>
-
     </form>
-
-    <button id="btnAddFuncionario">Adicionar</button>
+    
+    <button id="btnAddFuncionario">Adicionar novo funcionário</button>
 
     <div class="modal-form">
         <form id="form-funcionario" action="acoes.php" method="POST">
@@ -46,7 +45,6 @@
         </form>
     </div>
     
-
     <table border="1">
         <tr>
             <th>ID</th>
