@@ -26,10 +26,20 @@ p{
 input{
     width: 17vw;
     height: 4vh;
+    border-radius: 5px;
 }
 
 button{
     height: 4vh;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    background-color:  #0e2754;
+}
+
+
+#btnAddFuncionario{
+    margin-top: 20px;
 }
 
 table{
