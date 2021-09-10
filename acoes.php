@@ -15,4 +15,5 @@ $novoFuncionario = [
 
 adicionarFuncionario("./funcionarios.json", $novoFuncionario);
 
-// header("location: index.php");
+//leva o usuário para a tela de listagem
+header("location: index.php");
