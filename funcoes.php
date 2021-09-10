@@ -1,19 +1,39 @@
 <?php
 
-function lerArquivo($nomeFuncionario){
-    $arquivo = file_get_contents($nomeFuncionario);
-    $jsonArray = json_decode($arquivo)
+function lerArquivo($nomeArquivo){
+    $arquivo = file_get_contents($nomeArquivo);
+    $jsonArray = json_decode($arquivo);
 
     return $jsonArray;
 }
 
-
-function buscarFuncionario($funcionarios, $nome){
+function buscarFuncionario($funcionarios, $filtro){
     $funcionariosFiltro = [];
-    foreach($funcionarios as $funcionaro){
-        if($funcionario -> nome == $nome){
+    foreach($funcionarios as $funcionario){
+        if(strpos($funcionario->first_name, $filtro) !== false
+        ||
+        strpos($funcionario->last_name, $filtro) !== false
+        ||
+        strpos($funcionario->department, $filtro) !== false
+        ){
             $funcionariosFiltro[] = $funcionario;
         }
+        //strpos($funcionarios, $funcionariosFiltro);
     }
-    return $funcioanriosFiltro;
+    return $funcionariosFiltro;
+}
+
+
+function adicionarFuncionario($nomeArquivo, $novoFuncionario){
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    
+
+    $funcionarios[] = $novoFuncionario;
+
+    // print_r($funcionarios);
+
+    $json = json_encode($funcionarios);
+
+    file_put_contents($nomeArquivo, $json);
 }
