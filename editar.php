@@ -34,14 +34,14 @@
             else {
             ?>
                 <h1>Editar funcionário</h1>
-                <input type="hidden" placeholder="Digite o id" name="id" value=""/>
-                <input type="text" placeholder="Digite o primeiro nome" name="first_name" value=""/>
-                <input type="text" placeholder="Digite o sobrenome" name="last_name" value=""/>
-                <input type="text" placeholder="Digite o e-mail" name="email" value=""/>
-                <input type="text" placeholder="Digite o sexo" name="gender" value=""/>
-                <input type="text" placeholder="Digite o IP" name="ip_address" value=""/>
-                <input type="text" placeholder="Digite o país" name="country" value=""/>
-                <input type="text" placeholder="Digite o departamento" name="department" value=""/>
+                <input type="hidden" placeholder="Digite o id" name="id" value="<?= $funcionario -> id?>"/>
+                <input type="text" placeholder="Digite o primeiro nome" name="first_name" value="<?= $funcionario -> first_name?>"/>
+                <input type="text" placeholder="Digite o sobrenome" name="last_name" value="<?= $funcionario -> last_name?>"/>
+                <input type="text" placeholder="Digite o e-mail" name="email" value="<?= $funcionario -> email?>"/>
+                <input type="text" placeholder="Digite o sexo" name="gender" value="<?= $funcionario -> gender?>"/>
+                <input type="text" placeholder="Digite o IP" name="ip_address" value="<?= $funcionario -> ip_address?>"/>
+                <input type="text" placeholder="Digite o país" name="country" value="<?= $funcionario -> country?>"/>
+                <input type="text" placeholder="Digite o departamento" name="department" value="<?= $funcionario -> department?>"/>
                 <button>Salvar</button>
             <?php } ?>
         </form>
