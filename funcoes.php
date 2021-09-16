@@ -52,3 +52,18 @@ function deletarFuncionario($nomeArquivo, $idFuncioanrio){
     file_put_contents($nomeArquivo, $json);
 
 }
+
+
+
+function buscarFucionarioPorId($nomeArquivo, $idFuncioanrio){
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    foreach ($funcionarios as $funcionario) {
+        if ($funcionario->id == $idFuncioanrio) {
+            return $funcionario;
+        }
+    }
+
+    return false;
+}
