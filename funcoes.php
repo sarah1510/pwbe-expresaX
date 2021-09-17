@@ -8,6 +8,7 @@ function lerArquivo($nomeArquivo)
     return $jsonArray;
 }
 
+
 function buscarFuncionario($funcionarios, $filtro)
 {
     $funcionariosFiltro = [];
@@ -38,7 +39,6 @@ function adicionarFuncionario($nomeArquivo, $novoFuncionario)
 }
 
 
-
 function deletarFuncionario($nomeArquivo, $idFuncioanrio){
     $funcionarios = lerArquivo($nomeArquivo);
 
@@ -54,7 +54,6 @@ function deletarFuncionario($nomeArquivo, $idFuncioanrio){
 }
 
 
-
 function buscarFucionarioPorId($nomeArquivo, $idFuncioanrio){
 
     $funcionarios = lerArquivo($nomeArquivo);
@@ -66,4 +65,20 @@ function buscarFucionarioPorId($nomeArquivo, $idFuncioanrio){
     }
 
     return false;
+}
+
+
+function editarFuncionario($nomeArquivo, $funcionarioEditado){
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    foreach ($funcionarios as $chave => $funcionario) {
+        if($funcionario->id == $funcionarioEditado["id"]){
+            $funcionarios[$chave] = $funcionarioEditado;
+        }
+    }
+
+    $json = json_encode(array_values($funcionarios));
+
+    file_put_contents($nomeArquivo, $json);
 }
