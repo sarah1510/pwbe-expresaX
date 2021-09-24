@@ -52,11 +52,10 @@ if (isset($_GET["buscarFuncionario"])) {
         <button>Buscar</button>
     </form>
 
-    
-    <button id="btnAddFuncionario"> Adicionar novo funcionário +</button>
-    
-    
-
+    <div>
+        <button id="btnAddFuncionario"> Adicionar novo funcionário +</button>
+    </div>
+   
     <div class="modal-form">
         <form id="form-funcionario" action="acoes.php" method="POST">
             <h1>Adicionando funcionário</h1>
