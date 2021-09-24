@@ -82,3 +82,39 @@ function editarFuncionario($nomeArquivo, $funcionarioEditado){
 
     file_put_contents($nomeArquivo, $json);
 }
+
+
+//FUNÇÕES PARA REALIZAR LOGIN E LOGOUT
+function realizarLogin($usuario, $senha, $dados){
+    foreach ($dados as $dado) {
+         if ($dado->usuario == $usuario && $dado->senha == $senha) {
+           
+            //Variáveis de sessão
+            $_SESSION["usuario"] = $dado->usuario;
+            $_SESSION["id"] = session_id();
+            $_SESSION["data_hora"] = date('d/m/Y = h:i:s');
+
+        header('location: home.php');
+        exit;
+        } 
+    }
+
+    header('location: index.php');
+}
+
+
+function verificarLogin(){
+
+    if($_SESSION["id"] != session_id() || (empty($_SESSION["id"]))){
+        header('location: index.php');
+    }
+
+}
+
+
+function finalizarLogin(){
+    session_unset(); //limpa todas as variáveis de sessão
+    session_destroy(); //destroi a sessão ativa
+
+    header('location: index.php');
+}
